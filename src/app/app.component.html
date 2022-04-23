@@ -4,16 +4,14 @@
           Team Generator
       </h1>
       <ul class="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
+          <li *ngFor="let member of members">{{ member }}</li>
       </ul>
       <div class="add-members-container">
         <input
           #addMemberInput
           type="text" 
-          placeholder="name" 
+          placeholder="name"
+          [value]="newMemberName"
           (input)="onInput(addMemberInput.value)"/>
         <button (click)="addMember()">Add</button>
       </div>
@@ -21,5 +19,6 @@
         <input type="text" placeholder="# of teams" />
         <button>Generate</button>
       </div>
+      <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
     </div>
 </div>
