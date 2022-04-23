@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'team-generator';
+  newMemberName = "";
+  members: string[] = [];
+  addMember(){
+    this.members.push(this.newMemberName)
+    console.log(this.members);
+  }
+  onInput(member: string){
+    this.newMemberName = member;
+  }
 }

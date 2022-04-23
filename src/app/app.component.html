@@ -1,5 +1,5 @@
 <div class="container">
-    <div>
+    <div class="ui card">
       <h1>
           Team Generator
       </h1>
@@ -10,8 +10,12 @@
           <li>4</li>
       </ul>
       <div class="add-members-container">
-        <input type="text" placeholder="name"/>
-        <button>Add</button>
+        <input
+          #addMemberInput
+          type="text" 
+          placeholder="name" 
+          (input)="onInput(addMemberInput.value)"/>
+        <button (click)="addMember()">Add</button>
       </div>
       <div class="input-container">
         <input type="text" placeholder="# of teams" />
